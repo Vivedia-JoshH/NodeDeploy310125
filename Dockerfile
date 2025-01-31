@@ -2,7 +2,7 @@ FROM node:latest
 
 COPY . .
 
-RUN sh 'npm install'
+RUN npm install
 
 EXPOSE 5000
 
