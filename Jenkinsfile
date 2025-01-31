@@ -15,6 +15,8 @@ pipeline {
             steps {
                 sh 'docker network create nodenetwork || true'
                 sh 'docker build -t node-image .'
+            }
+        }
         stage('Run') {
             steps {
                 sh 'docker run -d --name node-app --network nodenetwork -p 5000:5000 node-image'
